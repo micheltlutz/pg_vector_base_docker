@@ -1,0 +1,10 @@
+services:
+  psql:
+    container_name: pg_vector_base_docker_tmp
+    image: pgvector/pgvector:pg17  # Usando a imagem pgvector com PostgreSQL 17
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
